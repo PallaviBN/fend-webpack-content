@@ -1,16 +1,24 @@
 function handleSubmit(event) {
-    event.preventDefault()
-
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    checkForName(formText)
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
+    event.preventDefault();
+   
+let formText = document.getElementById("statement").value
+    
+console.log("::: Form Submitted :::")
+fetch("/api", {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ text })
     })
+     .then(res => res.json())
+     .then(data => {
+        document.getElementById("text_polarity").innerHTML = data.polarity;
+        document.getElementById("text_subjectivity").innerHTML = data.subjectivity;
+        document.getElementById("text_polarity_confidence").innerHTML = data.polarity_confidence;
+        document.getElementById("text_subjectivity_confidence").innerHTML = data.subjectivity_confidence;
+    });     
 }
 
 export { handleSubmit }
