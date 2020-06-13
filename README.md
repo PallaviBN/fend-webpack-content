@@ -5,17 +5,17 @@ You need `node` and `npm` installed on your system to be able to run and build t
 ### Running the project
 To install all the project dependencies run:
 
-npm install
+`npm install`
 
 To build the application:
 
-npm run build-prod
+`npm run build-prod`
 
 Finally, to run the application:
 
-npm run start
+`npm run start`
 
 To test:
  
-npm run test
+`npm run test`
 
