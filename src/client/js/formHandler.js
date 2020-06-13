@@ -7,10 +7,11 @@ console.log("::: Form Submitted :::")
 fetch("/api", {
     method: "POST",
     mode: "cors",
+    credentials:"same-origin",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({formText})
+    body: JSON.stringify({ formText })
     })
      .then(res => res.json())
      .then(data => {
@@ -19,7 +20,8 @@ fetch("/api", {
         document.getElementById("text_subjectivity").innerHTML = data.subjectivity;
         document.getElementById("text_polarity_confidence").innerHTML = data.polarity_confidence;
         document.getElementById("text_subjectivity_confidence").innerHTML = data.subjectivity_confidence;
-    });     
+    })
+    .catch(e => console.error(e));   
 }
 
 export { handleSubmit };

@@ -1,4 +1,4 @@
-form {
+form{
     display: flex;
     flex-direction: column;
     margin: 2rem 0;
@@ -9,15 +9,40 @@ input {
     width: 80%;
     padding: 0.5rem 1rem;
     margin: 0.5rem 1rem;
-    background-color: plum;
-    font-size: 1.5rem;
+    background-color: black;
+    color:ivory;
+    font-size:17px;
     font-family: "Roboto Mono", monospace;
 }
-
-label {
-    font-size: 1.6rem;
-    font-weight: bold;
+#statement{
+    background-color:teal;
+    font-size: 19px;
 }
+label {
+    font-size:15 px;
+    font-weight: lighter;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+strong{
+    font-size: 22px;
+    margin-left: 330px;
+}
+
+li{
+    margin-left: 50px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+li.p{
+    color: tomato;
+}
+
 
 @media only screen and (max-width: 770px) {
     input[type="text"]{

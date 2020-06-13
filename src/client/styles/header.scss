@@ -2,7 +2,11 @@ header {
     display: flex;
     text-align: center;
     width: 100%;
-    padding: 10px 40px;
-    background-color: #dd3861;
+    padding: 10px 10px 10px 10px;
+    background-color: slateblue;
     position: fixed;
+}
+
+header.h1{
+    border:2px dashed snow;
 }

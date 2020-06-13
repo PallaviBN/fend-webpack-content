@@ -15,7 +15,7 @@
             <section>
                 <form onsubmit="return Client.handleSubmit(event)">
                     <label for="statement">
-                      Type in a statement to see what the Aylien NLP understands from it:
+                      Type something to see what the Aylien NLP understands from it:
                     </label>
                     <input  type="text" id="statement" placeholder="eg: John is a very good football player."
                     required />
@@ -24,19 +24,19 @@
             </section>
 
             <section class="result">
-                <strong>Form Results:</strong>
-                <ul>
+                <strong>Result</strong>
+                <ul class="row">
                     <li class="col-lg-6">
-                      <h3><u>Text Polarity:</u></h3>
+                      <u>Text Polarity:</u>
                       <p id="text_polarity"></p>
-                      <h4>Confidence:</h4>
+                      <i>Confidence:</i>
                       <p id="text_polarity_confidence"></p>
                     </li>
           
                     <li class="col-lg-6">
-                      <h3><u>Text Subjectivity:</u></h3>
+                      <u>Text Subjectivity:</u>
                       <p id="text_subjectivity"></p>
-                      <h4>Confidence:</h4>
+                      <i>Confidence:</i>
                       <p id="text_subjectivity_confidence"></p>
                     </li>
                   </ul>
@@ -44,16 +44,18 @@
         </main>
 
         <footer>
-            <p style="text-align:center;">&copy;PBN</p>
+            <p>&copy; PBN</p>
         </footer>
 
-        <!-- <script>
-            if ("serviceWorker" in navigator) {
-              window.addEventListener("load", () =>
-                navigator.serviceWorker.register("/service-worker.js")
-              );
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+              });
             }
-          </script> -->
+        </script>
 
     </body>
 </html>
