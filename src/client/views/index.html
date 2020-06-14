@@ -6,20 +6,18 @@
     </head>
 
     <body>
-
         <header>
-                <h1>News Article NLP</h1>
+                <h1>Evaluate News Article NLP</h1>
         </header>
-
         <main>
             <section>
-                <form onsubmit="return Client.handleSubmit(event)">
+                <form>
                     <label for="statement">
                       Type something to see what the Aylien NLP understands from it:
                     </label>
-                    <input  type="text" id="statement" placeholder="eg: John is a very good football player."
+                    <input  type="text" id="statement" placeholder="eg: Virat is a brilliant cricketer."
                     required />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="SUBMIT" onclick=return Client.handleSubmit(event)" />
                 </form>
             </section>
 
@@ -27,17 +25,16 @@
                 <strong>Result</strong>
                 <ul>
                     <li>
-                      <u>Text Polarity:</u>
-                      <p id="text_polarity"></p>
+                      <u>Polarity:</u>
+                      <p id="polarity"></p>
                       <i>Confidence:</i>
-                      <p id="text_polarity_confidence"></p>
+                      <p id="polarity_confidence"></p>
                     </li>
-          
                     <li>
-                      <u>Text Subjectivity:</u>
-                      <p id="text_subjectivity"></p>
+                      <u>Subjectivity:</u>
+                      <p id="subjectivity"></p>
                       <i>Confidence:</i>
-                      <p id="text_subjectivity_confidence"></p>
+                      <p id="subjectivity_confidence"></p>
                     </li>
                   </ul>
             </section>
