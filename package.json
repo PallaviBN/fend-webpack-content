@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/server/index.js",
   "scripts": {
+    "proxy": "http://localhost:8899",
     "test": "jest",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",

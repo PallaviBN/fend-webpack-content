@@ -33,7 +33,7 @@ app.post("/resultFromAPI", function(req, res) {
   console.log("Request= ", text);
   textApi.sentiment({ text }, (error, resp) => {
   console.log("Response= ", resp);
-  res.send(resp);
+  if (!error) res.send(resp);
   });
 });
 
