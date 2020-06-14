@@ -11,13 +11,12 @@
         </header>
         <main>
             <section>
-                <form>
-                    <label for="statement">
-                      Type something to see what the Aylien NLP understands from it:
+                <form onsubmit="return Client.handleSubmit(event)">
+                    <label for="url">
+                      Type an URL to see what the Aylien NLP understands from it:
                     </label>
-                    <input  type="text" id="statement" placeholder="eg: Virat is a brilliant cricketer."
-                    required />
-                    <input type="submit" value="SUBMIT" onclick="return Client.handleSubmit(event)" />
+                    <input  type="text" id="url" placeholder= " eg: https://www.example.com/" required />
+                    <input type="submit" value="SUBMIT" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)"/>
                 </form>
             </section>
 
@@ -35,6 +34,10 @@
                       <p id="subjectivity"></p>
                       <i>Confidence:</i>
                       <p id="subjectivity_confidence"></p>
+                    </li>
+                    <li>
+                      <u>Text:</u>
+                      <p id="info"></p>  
                     </li>
                   </ul>
             </section>

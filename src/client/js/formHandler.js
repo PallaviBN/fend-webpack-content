@@ -1,7 +1,10 @@
+import { checkForValidation } from "./urlChecker";
 function handleSubmit(event) {
     event.preventDefault();
    
-let formText = document.getElementById("statement").value
+let url = document.getElementById("url").value
+console.log(url);
+checkForValidation(url)
 
 console.log("::: Form Submitted :::")
 fetch("/resultFromAPI", {
@@ -10,7 +13,7 @@ fetch("/resultFromAPI", {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ formText })
+    body: JSON.stringify({ url })
     })
      .then(res => res.json())
      .then(data => {
@@ -19,6 +22,7 @@ fetch("/resultFromAPI", {
         document.getElementById("subjectivity").innerHTML = data.subjectivity;
         document.getElementById("polarity_confidence").innerHTML = data.polarity_confidence;
         document.getElementById("subjectivity_confidence").innerHTML = data.subjectivity_confidence;
+        document.getElementById("info").innerHTML = data.text;
     })
     .catch(e => console.error(e));   
 }

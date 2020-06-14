@@ -29,9 +29,9 @@ app.get('/', function (req, res) {
 
 //POST route
 app.post("/resultFromAPI", function(req, res) {
-  const text  = req.body.formText;
+  const text  = req.body.url;
   console.log("Request= ", text);
-  textApi.sentiment({ text }, (error, resp) => {
+  textApi.sentiment({ url : text }, (error, resp) => {
   console.log("Response= ", resp);
   if (!error) res.send(resp);
   });
